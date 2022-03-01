@@ -20,4 +20,4 @@ const geocode = (address, callback) => {
 }
 module.exports = { geocode }
 
-//pk.eyJ1IjoibWV0YWxzb2siLCJhIjoiY2t1MWhtOWIyMjd1eDJ1cDgzaWhkMWw2dyJ9.PvWfwUxsX1JaF-o6Aem1zA
+//

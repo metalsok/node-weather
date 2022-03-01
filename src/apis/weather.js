@@ -9,4 +9,3 @@ const getWeather = (location, callback) => {
 
 }
 module.exports = { getWeather }
-//ee087b806611abc235cf4c4a8422e872
