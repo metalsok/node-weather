@@ -1,10 +1,8 @@
 const geolocation = require('./apis/geolocation');
 const weather = require('./apis/weather');
-const path = require('path');
 const express = require('express');
 const yargs = require('yargs');
 const fs = require('fs');
-const {geocode} = require('./apis/geolocation');
 
 yargs.command({
   command: 'start',
@@ -42,7 +40,7 @@ const {weatherApiKey, geoApiKey} = JSON.parse(
     'utf8');
 
 app.get('/geo', (req, res) => {
-  const city = req.query.city;
+  const {city = 'Vienna'} = req.query;
   geolocation.geocode(city, geoApiKey, (err, geodata) => {
     if (geodata) {
       weather.forecast(geodata, weatherApiKey,
