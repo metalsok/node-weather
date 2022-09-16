@@ -1,11 +1,11 @@
 const request = require('request');
 
-const geocode = (address, callback) => {
-    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?access_token=`
+const geocode = (city,geoApiKey, callback) => {
+    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${city}.json?access_token=${geoApiKey}`
     request({ url, json: true }, (err, res) => {
         if (err) {
             callback('Unable to connect!', undefined)
-        } 
+        }
         else if(res.body.features.length===0){
             callback('Location not found',undefined)
         }
@@ -19,5 +19,3 @@ const geocode = (address, callback) => {
     })
 }
 module.exports = { geocode }
-
-//
