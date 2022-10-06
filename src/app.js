@@ -10,17 +10,6 @@ yargs.command({
   command: 'start',
   describe: 'Set all api keys',
   builder: {
-    weatherApiKey: {
-      describe: 'Set the weather api key',
-      demandOption: true,
-      type: 'string',
-    },
-    geoApiKey: {
-      describe: 'Set the geolocation api key',
-      demandOption: true,
-      type: 'string',
-
-    },
     location: {
       describe: 'Set the geolocation api key',
       demandOption: true,
@@ -28,17 +17,17 @@ yargs.command({
 
     },
   },
-  handler: (argv) => {
-    const keys = {
-      weatherApiKey: argv.weatherApiKey,
-      geoApiKey: argv.geoApiKey,
-    };
-    fs.writeFileSync('api-keys.json', JSON.stringify(keys));
-  },
 });
 
 const app = express();
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
+
+const {
+  weatherApiKey = process.env.weatherApiKey,
+  geoApiKey = process.env.geoApiKey,
+} = JSON.parse(
+    fs.readFileSync('src/api-keys.json'),
+    'utf8');
 
 // Setting up paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -52,10 +41,6 @@ hbs.registerPartials(partialsPath);
 
 // Setup static directory
 app.use(express.static(publicDirectoryPath));
-
-const {weatherApiKey, geoApiKey} = JSON.parse(
-    fs.readFileSync('api-keys.json'),
-    'utf8');
 
 app.get('', (req, res) => {
   res.render('index', {
