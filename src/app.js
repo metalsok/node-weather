@@ -38,6 +38,7 @@ yargs.command({
 });
 
 const app = express();
+const port = process.env.PORT || 3000
 
 // Setting up paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -109,7 +110,7 @@ app.get('*', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('Listening to port 3000');
+app.listen(port, () => {
+  console.log('Listening to port ' + port);
 });
 yargs.parse();

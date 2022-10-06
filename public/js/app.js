@@ -11,7 +11,7 @@ form.addEventListener('submit', (e) => {
         forecast.innerText = 'Please insert a valid location!';
         return;
       }
-      fetch(`http://localhost:3000/weather?city=${city}`).then(((response) => {
+      fetch(`/weather?city=${city}`).then(((response) => {
         if (response) {
           return response.json().then((data) => {
             locationName.innerText = data.location;
