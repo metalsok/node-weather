@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NodeJS Playground</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="main-content">
+    <p>{{>header}}</p>
+    <h4>Checking the weather!</h4>
+    <form>
+        <input type="text" id="city" name="city">
+        <button type="submit">Search</button>
+    </form>
+
+    <section class="results">
+        <p id="location"></p>
+        <p id="forecast"></p>
+    </section>
+
+</div>
+
+<div>{{>footer}}</div>
+</body>
+<script src="/js/app.js"></script>
+</html>

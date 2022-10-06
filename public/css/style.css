@@ -1,0 +1,62 @@
+body {
+    color: #333333;
+    font-family: 'arial';
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 0 16px;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.main-content {
+    flex-grow: 1;
+}
+
+footer {
+    margin-top: 16px;
+    padding: 16px 0;
+    color: #888888;
+    border-top: 1px solid #eeeeee;
+}
+
+.portrait {
+    width: 250px;
+}
+
+header {
+    margin-top: 16px;
+    margin-bottom: 48px;
+}
+
+header a {
+    color: #888888;
+    margin-right: 16px;
+    text-decoration: none
+}
+
+input {
+    border: 1px solid #cccccc;
+    padding: 8px 8px
+}
+
+button {
+    background-color: cadetblue;
+    color: white;
+    padding: 8px;
+    margin-left: 1em;
+    border: none;
+}
+
+.results {
+    margin-top: 30px;
+    font-family: 'verdana';
+    font-weight: 16;
+}
+
+.results #location{
+    color: #888888;
+
+}
